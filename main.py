@@ -9,7 +9,9 @@ btn1 = Button(24)
 btn2 = Button(23)
 btn3 = Button(18)
 
-meme.sendMeme()
+
+
+
 lcd = LCD()
 
 
@@ -19,7 +21,7 @@ while True:
     if btn2.is_pressed == False:
         stock.show()
         lcd.clear()
-    elif btn1.is_pressed == False:
+    if btn1.is_pressed == False:
         lcd.clear()
         lcd.text('sending...',2,'center')
         meme.sendMeme()
