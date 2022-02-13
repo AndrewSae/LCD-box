@@ -1,8 +1,6 @@
-
-from time import sleep
+import time
 from gpiozero import Button
 from rpi_lcd import LCD
-import time
 import sendMeme as meme
 import showDateTime as home
 import stockInfo as stock
@@ -11,7 +9,7 @@ btn1 = Button(24)
 btn2 = Button(23)
 btn3 = Button(18)
 
-
+meme.sendMeme()
 lcd = LCD()
 
 

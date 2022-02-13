@@ -1,16 +1,15 @@
-
 import os
 import random
 import smtplib
 import imghdr
 from email.message import EmailMessage
 
-email_address = 'raspberrypi.9696@gmail.com'
-email_password = 'Lilly2021'
+email_address = 'EMAIL HERE'
+email_password = 'PASSWORD HERE'
 
 
 def GetMeme():
-    folder_directory = '/home/pi/boxCode/raspberry-pi-zero-LCD-box/memes'
+    folder_directory = '/home/pi/boxCode/'
     file_path = os.path.join(folder_directory, random.choice(os.listdir(folder_directory)))
     return file_path
 

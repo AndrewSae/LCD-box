@@ -35,9 +35,9 @@ def show():
         line2 = "price: " + "$" + format_current_price
         
         if percent_change>0:
-            line3 = "+" + format_percent_change + " up today"
+            line3 = "+" + format_percent_change + "% up today"
         else:
-            line3 = format_percent_change + " down today"
+            line3 = format_percent_change + "% down today"
 
         
         lcd.clear()
