@@ -5,8 +5,8 @@ import smtplib
 import imghdr
 from email.message import EmailMessage
 
-email_address = 'raspberrypi.9696@gmail.com'
-email_password = 'Lilly2021'
+email_address = 'EMAIL'
+email_password = 'PASSWIRD'
 
 
 def GetMeme():
