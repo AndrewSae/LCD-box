@@ -10,7 +10,7 @@ email_password = 'PASSWIRD'
 
 
 def GetMeme():
-    folder_directory = '/home/pi/boxCode/raspberry-pi-zero-LCD-box/memes'
+    folder_directory = '/home/pi/LCD-box/memes'
     file_path = os.path.join(folder_directory, random.choice(os.listdir(folder_directory)))
     return file_path
 
