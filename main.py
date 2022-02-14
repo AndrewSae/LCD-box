@@ -1,4 +1,5 @@
 import time
+from webbrowser import get
 from gpiozero import Button
 from rpi_lcd import LCD
 from datetime import datetime, date
@@ -30,9 +31,29 @@ def get_last_close(ticker):
     price=  todays_data['Close'][3]
     return price
 
+ticker = yf.Ticker(tickers[0])
+first_last_close = get_last_close(ticker)
+first_current_price = get_current_price(ticker)
+first_percent_change = ((first_current_price - first_last_close)/first_last_close)*100  
+def show_first(current_price,percent_change):
+    line1 =  tickers[0] + '(' + ticker_comp_names[0] + ')'
+    line2 = "price: " + "$" + format(current_price, ",.2f")
+    if percent_change>0:
+        line3 = "+" + format(percent_change, ",.2f") + "% up today"
+    else:
+        line3 = format(percent_change, ",.2f") + "% down today"
+    lcd.clear()
+    lcd.text(line1,1)
+    lcd.text(line2,2)
+    lcd.text(str(line3),4)
+    time.sleep(3)
+
+
+
 def show_stock():
+    show_first(first_current_price,first_percent_change)
     x = len(tickers)
-    i =0
+    i =1
     run=True
     while run:
         ticker = yf.Ticker(tickers[i])
