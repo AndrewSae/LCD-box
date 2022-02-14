@@ -30,11 +30,11 @@ def get_last_close(ticker):
     todays_data = ticker.history(period='5d')
     price=  todays_data['Close'][3]
     return price
-
-ticker = yf.Ticker(tickers[0])
-first_last_close = get_last_close(ticker)
-first_current_price = get_current_price(ticker)
-first_percent_change = ((first_current_price - first_last_close)/first_last_close)*100  
+def get_first_stock_info():
+    ticker = yf.Ticker(tickers[0])
+    first_last_close = get_last_close(ticker)
+    first_current_price = get_current_price(ticker)
+    first_percent_change = ((first_current_price - first_last_close)/first_last_close)*100  
 def show_first(current_price,percent_change):
     line1 =  tickers[0] + '(' + ticker_comp_names[0] + ')'
     line2 = "price: " + "$" + format(current_price, ",.2f")
@@ -90,3 +90,4 @@ while True:
         lcd.clear()
     else:
         show_date_time()
+        get_first_stock_info
